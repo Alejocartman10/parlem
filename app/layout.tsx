@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { AuthProvider } from "@/lib/auth/AuthContext";
 import { UserProgressProvider } from "@/lib/context/UserProgressContext";
 
 export const metadata: Metadata = {
@@ -21,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="ca">
       <body className="font-sans antialiased text-parlem-gray-900">
-        <UserProgressProvider>{children}</UserProgressProvider>
+        <AuthProvider>
+          <UserProgressProvider>{children}</UserProgressProvider>
+        </AuthProvider>
       </body>
     </html>
   );

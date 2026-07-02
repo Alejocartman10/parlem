@@ -15,9 +15,11 @@ import type {
   LearningGoal,
   UserProfile,
 } from "@/lib/types";
-import { STORAGE_KEY, defaultUserProfile } from "@/lib/storage";
+import { defaultUserProfile } from "@/lib/storage";
 import { lessons } from "@/lib/data/lessons";
 import { registerLessonCompletion } from "@/lib/gamification";
+import { progressService } from "@/lib/progress/progress-service-instance";
+import { useAuth } from "@/lib/auth/AuthContext";
 
 interface UserProgressContextValue {
   profile: UserProfile;
@@ -35,27 +37,31 @@ interface UserProgressContextValue {
 const UserProgressContext = createContext<UserProgressContextValue | null>(null);
 
 export function UserProgressProvider({ children }: { children: ReactNode }) {
+  const { user, isLoading: isAuthLoading } = useAuth();
   const [profile, setProfile] = useState<UserProfile>(defaultUserProfile);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw) as UserProfile;
-        setProfile({ ...defaultUserProfile, ...parsed });
-      }
-    } catch {
-      setProfile(defaultUserProfile);
-    } finally {
+    if (isAuthLoading) return;
+
+    let isCancelled = false;
+    setIsLoaded(false);
+
+    progressService.loadProfile(user?.id ?? null).then((loadedProfile) => {
+      if (isCancelled) return;
+      setProfile(loadedProfile);
       setIsLoaded(true);
-    }
-  }, []);
+    });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [isAuthLoading, user?.id]);
 
   useEffect(() => {
     if (!isLoaded) return;
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(profile));
-  }, [profile, isLoaded]);
+    void progressService.persistProfile(profile, user?.id ?? null);
+  }, [profile, isLoaded, user?.id]);
 
   const completeOnboarding = useCallback(
     (data: { goal: LearningGoal; level: CatalanLevel; dailyGoalMinutes: DailyGoalMinutes }) => {
@@ -91,6 +97,7 @@ export function UserProgressProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const resetProgress = useCallback(() => {
+    progressService.clearLocalProfile();
     setProfile(defaultUserProfile);
   }, []);
 
