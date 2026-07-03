@@ -2,27 +2,48 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { AuthScreen } from "@/components/auth/AuthScreen";
 import { AuthTextField } from "@/components/auth/AuthTextField";
 import { AuthErrorMessage } from "@/components/auth/AuthErrorMessage";
 import { Button } from "@/components/ui/Button";
 import { useAuth } from "@/lib/auth/AuthContext";
 
+const ALLOWED_REDIRECT_PATHS = ["/home", "/learn", "/laia", "/profile"];
+
+function getSafeRedirectPath(redirectTo: string | null): string {
+  if (!redirectTo) return "/home";
+  const isInternal = ALLOWED_REDIRECT_PATHS.some(
+    (path) => redirectTo === path || redirectTo.startsWith(`${path}/`)
+  );
+  return isInternal ? redirectTo : "/home";
+}
+
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { signIn } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const rawRedirectTo = searchParams.get("redirectTo");
+  const destination = getSafeRedirectPath(rawRedirectTo);
+  console.log("[login] render →", { rawRedirectTo, destination });
+
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
     setError(null);
     setIsSubmitting(true);
 
+    console.log("[login] abans de signIn →", { rawRedirectTo, destination });
     const result = await signIn(email, password);
+    console.log("[login] després de signIn →", {
+      error: result.error,
+      rawRedirectTo: searchParams.get("redirectTo"),
+      destination,
+    });
 
     if (result.error) {
       setError(result.error);
@@ -30,7 +51,8 @@ export default function LoginPage() {
       return;
     }
 
-    router.push("/home");
+    console.log("[login] router.push →", destination);
+    router.push(destination);
   }
 
   return (

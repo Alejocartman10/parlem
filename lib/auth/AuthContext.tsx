@@ -39,6 +39,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const unsubscribe = supabaseAuthService.onAuthStateChange((nextUser) => {
       if (!isMounted) return;
+      console.log("[AuthContext] onAuthStateChange →", { nextUser });
       setUser(nextUser);
       setIsLoading(false);
     });

@@ -32,6 +32,11 @@ export async function middleware(request: NextRequest) {
   if (!user) {
     const loginUrl = new URL("/login", request.url);
     loginUrl.searchParams.set("redirectTo", request.nextUrl.pathname);
+    console.log("[middleware] sin sesión → redirigiendo a login", {
+      pathname: request.nextUrl.pathname,
+      redirectTo: request.nextUrl.pathname,
+      loginUrl: loginUrl.toString(),
+    });
     return NextResponse.redirect(loginUrl);
   }
 
