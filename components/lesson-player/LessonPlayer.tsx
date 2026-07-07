@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { InteractiveLesson, Lesson } from "@/lib/types";
 import { LessonProgressBar } from "@/components/lesson-player/LessonProgressBar";
@@ -12,6 +12,12 @@ import { StepMultipleChoice } from "@/components/lesson-player/StepMultipleChoic
 import { StepFillBlank } from "@/components/lesson-player/StepFillBlank";
 import { StepWordOrder } from "@/components/lesson-player/StepWordOrder";
 import { StepConversation } from "@/components/lesson-player/StepConversation";
+import { StepObjectives } from "@/components/lesson-player/StepObjectives";
+import { StepReview } from "@/components/lesson-player/StepReview";
+import { StepCulturalCuriosity } from "@/components/lesson-player/StepCulturalCuriosity";
+import { StepMatch } from "@/components/lesson-player/StepMatch";
+import { StepWrite } from "@/components/lesson-player/StepWrite";
+import { StepCommonError } from "@/components/lesson-player/StepCommonError";
 import { StepSummary } from "@/components/lesson-player/StepSummary";
 import { useUserProgress } from "@/lib/context/UserProgressContext";
 
@@ -65,7 +71,7 @@ export function LessonPlayer({ lesson, content }: LessonPlayerProps) {
         {isFinished ? (
           <StepSummary lessonTitle={lesson.title} xpEarned={xpEarned} onFinish={handleFinish} />
         ) : (
-          <>
+          <React.Fragment key={currentStep.id}>
             {currentStep.kind === "presentation" && (
               <StepPresentation step={currentStep} onContinue={() => goToNextStep()} />
             )}
@@ -90,7 +96,25 @@ export function LessonPlayer({ lesson, content }: LessonPlayerProps) {
             {currentStep.kind === "conversation" && (
               <StepConversation step={currentStep} onComplete={goToNextStep} />
             )}
-          </>
+            {currentStep.kind === "objectives" && (
+              <StepObjectives step={currentStep} onContinue={() => goToNextStep()} />
+            )}
+            {currentStep.kind === "review" && (
+              <StepReview step={currentStep} onContinue={() => goToNextStep()} />
+            )}
+            {currentStep.kind === "cultural-curiosity" && (
+              <StepCulturalCuriosity step={currentStep} onContinue={() => goToNextStep()} />
+            )}
+            {currentStep.kind === "match" && (
+              <StepMatch step={currentStep} onComplete={goToNextStep} />
+            )}
+            {currentStep.kind === "write" && (
+              <StepWrite step={currentStep} onComplete={goToNextStep} />
+            )}
+            {currentStep.kind === "common-error" && (
+              <StepCommonError step={currentStep} onContinue={() => goToNextStep()} />
+            )}
+          </React.Fragment>
         )}
       </div>
     </div>

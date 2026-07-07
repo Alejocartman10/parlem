@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { Suspense, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AuthScreen } from "@/components/auth/AuthScreen";
@@ -19,7 +19,7 @@ function getSafeRedirectPath(redirectTo: string | null): string {
   return isInternal ? redirectTo : "/home";
 }
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { signIn } = useAuth();
@@ -104,5 +104,13 @@ export default function LoginPage() {
         </Button>
       </form>
     </AuthScreen>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense>
+      <LoginForm />
+    </Suspense>
   );
 }

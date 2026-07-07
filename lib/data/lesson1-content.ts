@@ -1,91 +1,155 @@
-import type { InteractiveLesson } from "@/lib/types";
+import { buildInteractiveLesson, type LessonTemplateData } from "@/lib/data/lesson-template";
 
 export const LESSON_1_ID = "l01-salutacions";
 
-export const lesson1Content: InteractiveLesson = {
+const template: LessonTemplateData = {
   lessonId: LESSON_1_ID,
-  steps: [
+
+  introduction: {
+    icon: "👋",
+    title: "Salutacions i presentacions",
+    description:
+      "Aprèn a saludar, presentar-te i acomiadar-te en català. Les primeres paraules que necessitaràs cada dia a Catalunya.",
+  },
+
+  objectives: [
+    "Saludar i acomiadar-te correctament a qualsevol hora del dia.",
+    "Presentar-te i preguntar el nom d'algú.",
+    "Respondre educadament quan et pregunten com estàs.",
+    "Usar les fórmules de cortesia bàsiques.",
+  ],
+
+  vocabulary: {
+    title: "Vocabulari essencial",
+    items: [
+      { id: "v01", icon: "👋", catalan: "Hola", spanish: "Hola" },
+      { id: "v02", icon: "☀️", catalan: "Bon dia", spanish: "Buenos días" },
+      { id: "v03", icon: "🌤️", catalan: "Bona tarda", spanish: "Buenas tardes" },
+      { id: "v04", icon: "🌙", catalan: "Bona nit", spanish: "Buenas noches" },
+      { id: "v05", icon: "🚶", catalan: "Adéu", spanish: "Adiós" },
+      { id: "v06", icon: "⏩", catalan: "Fins aviat", spanish: "Hasta pronto" },
+      { id: "v07", icon: "📅", catalan: "Fins demà", spanish: "Hasta mañana" },
+      { id: "v08", icon: "🙋", catalan: "Em dic...", spanish: "Me llamo..." },
+      { id: "v09", icon: "❓", catalan: "Com et dius?", spanish: "¿Cómo te llamas?" },
+      { id: "v10", icon: "🤝", catalan: "Encantat / Encantada", spanish: "Encantado / Encantada" },
+      { id: "v11", icon: "💬", catalan: "Com estàs?", spanish: "¿Cómo estás?" },
+      { id: "v12", icon: "😊", catalan: "Molt bé, gràcies", spanish: "Muy bien, gracias" },
+      { id: "v13", icon: "🙏", catalan: "Per favor", spanish: "Por favor" },
+      { id: "v14", icon: "💚", catalan: "De res", spanish: "De nada" },
+    ],
+  },
+
+  explanation: {
+    title: "Com funciona",
+    bullets: [
+      '"Hola" és la salutació universal: funciona a totes hores i en totes les situacions.',
+      '"Bon dia" s\'usa fins a migdia; "Bona tarda", a partir de les 13h aproximadament.',
+      'Per presentar-te, digues "Em dic [nom]". El pronom "jo" gairebé mai s\'utilitza en català.',
+      '"Encantat" (home) o "Encantada" (dona) és la resposta quan et presenten a algú.',
+    ],
+  },
+
+  audio: {
+    phrase: "Bon dia! Em dic Laia. Com et dius?",
+    translation: "¡Buenos días! Me llamo Laia. ¿Cómo te llamas?",
+  },
+
+  exercises: [
     {
-      kind: "presentation",
-      id: "presentation",
-      icon: "👋",
-      title: "Salutacions i presentacions",
-      description:
-        "Aprendràs a saludar i presentar-te en català: la primera eina per connectar amb la gent a Catalunya.",
-    },
-    {
-      kind: "explanation",
-      id: "explanation",
-      title: "Abans de començar",
-      bullets: [
-        "\"Hola\" es pot usar a qualsevol hora del dia.",
-        "\"Bon dia\" s'utilitza fins migdia, \"Bona tarda\" després.",
-        "\"Adéu\" serveix per acomiadar-te en qualsevol situació.",
-      ],
-    },
-    {
-      kind: "vocabulary",
-      id: "vocabulary",
-      title: "Vocabulari clau",
-      items: [
-        { id: "v1", icon: "👋", catalan: "Hola", spanish: "Hola" },
-        { id: "v2", icon: "☀️", catalan: "Bon dia", spanish: "Buenos días" },
-        { id: "v3", icon: "🌤️", catalan: "Bona tarda", spanish: "Buenas tardes" },
-        { id: "v4", icon: "🌙", catalan: "Adéu", spanish: "Adiós" },
-        { id: "v5", icon: "🙋", catalan: "Em dic...", spanish: "Me llamo..." },
-      ],
-    },
-    {
-      kind: "audio",
-      id: "audio",
-      title: "Escolta la pronunciació",
-      phrase: "Hola, em dic Laia.",
-      translation: "Hola, me llamo Laia.",
-    },
-    {
-      kind: "multiple-choice",
-      id: "exercise-1",
-      question: "Com saludes algú al matí?",
+      type: "multiple-choice",
+      question: "Són les 9 del matí. Com saludes el teu company de feina?",
       options: [
-        { id: "a", label: "Bon dia" },
-        { id: "b", label: "Bona nit" },
+        { id: "a", label: "Bona nit" },
+        { id: "b", label: "Bon dia" },
         { id: "c", label: "Adéu" },
+        { id: "d", label: "Fins demà" },
       ],
-      correctOptionId: "a",
+      correctOptionId: "b",
       xp: 5,
     },
     {
-      kind: "fill-blank",
-      id: "exercise-2",
+      type: "fill-blank",
       promptBefore: "Hola,",
-      promptAfter: "dic Marc.",
+      promptAfter: "dic Marc. Encantat!",
       correctAnswer: "em",
-      wordBank: ["em", "et", "es", "li"],
-      translation: "Hola, me llamo Marc.",
+      wordBank: ["em", "et", "es", "jo"],
+      translation: "Hola, me llamo Marc. ¡Encantado!",
       xp: 5,
     },
     {
-      kind: "word-order",
-      id: "exercise-3",
-      words: ["em", "dic", "Anna", "Hola,"],
-      correctOrder: ["Hola,", "em", "dic", "Anna"],
-      translation: "Hola, me llamo Anna.",
+      type: "word-order",
+      words: ["Hola,", "dic", "Anna.", "em", "Encantada!"],
+      correctOrder: ["Hola,", "em", "dic", "Anna.", "Encantada!"],
+      translation: "Hola, me llamo Anna. ¡Encantada!",
       xp: 5,
     },
     {
-      kind: "conversation",
-      id: "exercise-4",
-      title: "Mini conversa amb la Laia",
-      lines: [
-        { id: "l1", speaker: "laia", text: "Hola! Com et dic?" },
+      type: "match",
+      instruction: "Relaciona cada salutació amb la seva traducció",
+      pairs: [
+        { id: "m1", left: "Bon dia", right: "Buenos días" },
+        { id: "m2", left: "Adéu", right: "Adiós" },
+        { id: "m3", left: "Gràcies", right: "Gracias" },
+        { id: "m4", left: "De res", right: "De nada" },
+        { id: "m5", left: "Fins aviat", right: "Hasta pronto" },
       ],
-      question: "Què respons?",
-      options: [
-        { id: "a", label: "Em dic Marc, i tu?", correct: true },
-        { id: "b", label: "Adéu, fins demà.", correct: false },
-        { id: "c", label: "Bona tarda a tothom.", correct: false },
-      ],
+      xp: 5,
+    },
+    {
+      type: "write",
+      instruction: "Escriu en català",
+      prompt: "¿Cómo te llamas?",
+      correctAnswer: "Com et dius?",
+      acceptedAnswers: ["com et dius", "com et dius?"],
+      translation: "¿Cómo te llamas?",
       xp: 5,
     },
   ],
+
+  commonError: {
+    icon: "⚠️",
+    title: "Error molt freqüent",
+    wrong: '"Jo em dic Marc"',
+    correct: '"Em dic Marc"',
+    explanation:
+      'En català, el pronom "jo" gairebé mai s\'utilitza en la parla quotidiana. ' +
+      '"Em dic Marc" ja implica que ets tu qui parla. Afegir "jo" sona estrany i massa formal.',
+  },
+
+  conversation: {
+    title: "Primera conversa a la feina",
+    lines: [
+      { id: "l1", speaker: "laia", text: "Bon dia! Sóc la Laia. I tu, com et dius?" },
+      { id: "l2", speaker: "user", text: "..." },
+      { id: "l3", speaker: "laia", text: "Molt de gust, Marc. Ets nou a l'empresa?" },
+    ],
+    question: "Com respons quan et presenten?",
+    options: [
+      { id: "a", label: "Em dic Marc. Encantat!", correct: true },
+      { id: "b", label: "Adéu, fins aviat!", correct: false },
+      { id: "c", label: "Bona nit, gràcies.", correct: false },
+      { id: "d", label: "Jo sóc Marc.", correct: false },
+    ],
+    xp: 5,
+  },
+
+  review: [
+    '"Hola" funciona a qualsevol hora; "Bon dia", "Bona tarda" i "Bona nit" depenen de l\'hora.',
+    '"Em dic [nom]" és la forma estàndard de presentar-te. Sense "jo".',
+    '"Encantat" (home) / "Encantada" (dona) quan et presenten a algú nou.',
+    '"Fins aviat" i "Fins demà" per acomiadar-te de manera informal.',
+    '"Gràcies" — "De res" és la parella perfecta de cortesia.',
+  ],
+
+  culturalCuriosity: {
+    icon: "🌹",
+    title: "Sabia que...?",
+    content:
+      'A Catalunya és molt habitual saludar amb "Bon dia" fins i tot en contextos informals, ' +
+      "incloent botigues, ascensors i transport públic. " +
+      "No saludar pot semblar groller. Quan entres a un comerç, una petita botiga o el metge, " +
+      'sempre comença amb un "Bon dia" — és una mostra de respecte molt valorada.',
+  },
 };
+
+export const lesson1Content = buildInteractiveLesson(template);
