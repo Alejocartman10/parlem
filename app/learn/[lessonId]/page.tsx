@@ -13,7 +13,7 @@ import { LESSON_8_ID, lesson8Content } from "@/lib/data/lesson8-content";
 import { LESSON_9_ID, lesson9Content } from "@/lib/data/lesson9-content";
 import { LESSON_10_ID, lesson10Content } from "@/lib/data/lesson10-content";
 
-const interactiveLessonContent = {  [LESSON_1_ID]: lesson1Content,
+const interactiveLessonContent: Record<string, any> = { 
   [LESSON_2_ID]: lesson2Content,
   [LESSON_3_ID]: lesson3Content,
   [LESSON_4_ID]: lesson4Content,
