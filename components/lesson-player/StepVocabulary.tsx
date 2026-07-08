@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { VocabularyStep } from "@/lib/types";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -10,12 +10,69 @@ interface StepVocabularyProps {
   onContinue: () => void;
 }
 
+function findCatalanVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | null {
+  return voices.find((voice) => voice.lang.toLowerCase().startsWith("ca")) ?? null;
+}
+
 export function StepVocabulary({ step, onContinue }: StepVocabularyProps) {
   const [playingId, setPlayingId] = useState<string | null>(null);
+  const [isSupported, setIsSupported] = useState(true);
+  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
-  function handlePlay(itemId: string) {
-    setPlayingId(itemId);
-    setTimeout(() => setPlayingId(null), 700);
+  useEffect(() => {
+    const supported = typeof window !== "undefined" && "speechSynthesis" in window;
+    setIsSupported(supported);
+
+    if (!supported) {
+      return;
+    }
+
+    function loadVoices() {
+      setVoices(window.speechSynthesis.getVoices());
+    }
+
+    loadVoices();
+    window.speechSynthesis.addEventListener("voiceschanged", loadVoices);
+
+    return () => {
+      window.speechSynthesis.removeEventListener("voiceschanged", loadVoices);
+      window.speechSynthesis.cancel();
+      utteranceRef.current = null;
+    };
+  }, []);
+
+  function handlePlay(itemId: string, catalanText: string) {
+    if (!isSupported) {
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(catalanText);
+    utterance.lang = "ca-ES";
+    utterance.rate = 0.9;
+
+    const catalanVoice = findCatalanVoice(voices);
+    if (catalanVoice) {
+      utterance.voice = catalanVoice;
+    }
+
+    utterance.onstart = () => {
+      if (utteranceRef.current !== utterance) return;
+      setPlayingId(itemId);
+    };
+    utterance.onend = () => {
+      if (utteranceRef.current !== utterance) return;
+      setPlayingId(null);
+    };
+    utterance.onerror = () => {
+      if (utteranceRef.current !== utterance) return;
+      setPlayingId(null);
+    };
+
+    utteranceRef.current = utterance;
+    window.speechSynthesis.speak(utterance);
   }
 
   return (
@@ -38,7 +95,7 @@ export function StepVocabulary({ step, onContinue }: StepVocabularyProps) {
                 <p className="text-xs text-parlem-gray-500">{item.spanish}</p>
               </div>
               <button
-                onClick={() => handlePlay(item.id)}
+                onClick={() => handlePlay(item.id, item.catalan)}
                 aria-label={`Escoltar ${item.catalan}`}
                 className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm transition-all duration-200 ${
                   playingId === item.id
