@@ -218,3 +218,4 @@ export interface InteractiveLesson {
   lessonId: string;
   steps: LessonStep[];
 }
+ 
