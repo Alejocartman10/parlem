@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { AppScreen } from "@/components/layout/AppScreen";
+import { LessonDetail } from "@/components/lessons/LessonDetail";
 import { LessonPlayer } from "@/components/lesson-player/LessonPlayer";
 import { getLessonById, lessons } from "@/lib/data/lessons";
+import type { InteractiveLesson } from "@/lib/types";
 import { LESSON_1_ID, lesson1Content } from "@/lib/data/lesson1-content";
 import { LESSON_2_ID, lesson2Content } from "@/lib/data/lesson2-content";
 import { LESSON_3_ID, lesson3Content } from "@/lib/data/lesson3-content";
@@ -13,7 +15,8 @@ import { LESSON_8_ID, lesson8Content } from "@/lib/data/lesson8-content";
 import { LESSON_9_ID, lesson9Content } from "@/lib/data/lesson9-content";
 import { LESSON_10_ID, lesson10Content } from "@/lib/data/lesson10-content";
 
-const interactiveLessonContent: Record<string, any> = { 
+const interactiveLessonContent: Record<string, InteractiveLesson> = {
+  [LESSON_1_ID]: lesson1Content,
   [LESSON_2_ID]: lesson2Content,
   [LESSON_3_ID]: lesson3Content,
   [LESSON_4_ID]: lesson4Content,
@@ -47,5 +50,9 @@ export default async function LessonPage({
     return <LessonPlayer lesson={lesson} content={content} />;
   }
 
-  notFound();
+  return (
+    <AppScreen>
+      <LessonDetail lesson={lesson} />
+    </AppScreen>
+  );
 }
