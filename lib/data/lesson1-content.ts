@@ -78,9 +78,9 @@ const template: LessonTemplateData = {
     },
     {
       type: "word-order",
-      words: ["Hola,", "dic", "Anna.", "em", "Encantada!"],
-      correctOrder: ["Hola,", "em", "dic", "Anna.", "Encantada!"],
-      translation: "Hola, me llamo Anna. ¡Encantada!",
+      words: ["gràcies.", "bé,", "Molt", "tu?", "I"],
+      correctOrder: ["Molt", "bé,", "gràcies.", "I", "tu?"],
+      translation: "Muy bien, gracias. ¿Y tú?",
       xp: 5,
     },
     {
