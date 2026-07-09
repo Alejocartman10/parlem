@@ -50,12 +50,25 @@ interface TemplateExerciseWrite {
   xp: number;
 }
 
+/**
+ * Tip informatiu, sense avaluació. S'insereix a l'array `exercises` en la
+ * posició exacta on cal explicar una estructura abans que un exercici la
+ * exigeixi. No suma XP ni interromp el flux d'avaluació.
+ */
+interface TemplateExerciseTip {
+  type: "tip";
+  icon: string;
+  title: string;
+  content: string;
+}
+
 type TemplateExercise =
   | TemplateExerciseMultipleChoice
   | TemplateExerciseFillBlank
   | TemplateExerciseWordOrder
   | TemplateExerciseMatch
-  | TemplateExerciseWrite;
+  | TemplateExerciseWrite
+  | TemplateExerciseTip;
 
 // ─── Estructura canónica de una lección ──────────────────────────────────────
 
@@ -105,6 +118,16 @@ export interface LessonTemplateData {
   exercises: TemplateExercise[];
 
   conversation: {
+    /**
+     * Tip opcional que s'insereix just abans de la conversa, per explicar
+     * una estructura (verbs, connectors) que la conversa exigeix però que
+     * no forma part del vocabulari ni dels exercicis previs.
+     */
+    tip?: {
+      icon: string;
+      title: string;
+      content: string;
+    };
     title: string;
     lines: ConversationLine[];
     question: string;
@@ -229,6 +252,14 @@ export function buildInteractiveLesson(data: LessonTemplateData): InteractiveLes
         translation: exercise.translation,
         xp: exercise.xp,
       });
+    } else if (exercise.type === "tip") {
+      steps.push({
+        kind: "tip",
+        id: id(),
+        icon: exercise.icon,
+        title: exercise.title,
+        content: exercise.content,
+      });
     }
   }
 
@@ -243,7 +274,16 @@ export function buildInteractiveLesson(data: LessonTemplateData): InteractiveLes
     explanation: data.commonError.explanation,
   });
 
-  // 8. Conversa
+  // 8. Conversa (amb tip opcional immediatament abans)
+  if (data.conversation.tip) {
+    steps.push({
+      kind: "tip",
+      id: id(),
+      icon: data.conversation.tip.icon,
+      title: data.conversation.tip.title,
+      content: data.conversation.tip.content,
+    });
+  }
   steps.push({
     kind: "conversation",
     id: id(),

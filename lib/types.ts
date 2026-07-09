@@ -198,6 +198,14 @@ export interface CommonErrorStep {
   explanation: string;
 }
 
+export interface TipStep {
+  kind: "tip";
+  id: string;
+  icon: string;
+  title: string;
+  content: string;
+}
+
 export type LessonStep =
   | PresentationStep
   | ObjectivesStep
@@ -211,6 +219,7 @@ export type LessonStep =
   | WriteStep
   | ConversationStep
   | CommonErrorStep
+  | TipStep
   | ReviewStep
   | CulturalCuriosityStep;
 
@@ -218,4 +227,3 @@ export interface InteractiveLesson {
   lessonId: string;
   steps: LessonStep[];
 }
- 

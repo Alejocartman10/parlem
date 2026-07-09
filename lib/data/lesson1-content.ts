@@ -117,6 +117,15 @@ const template: LessonTemplateData = {
   },
 
   conversation: {
+    tip: {
+      icon: "🗣️",
+      title: 'El verb "ser": sóc, ets, és',
+      content:
+        'Per presentar-te necessites el verb "ser". ' +
+        '"Sóc" (jo) i "ets" (tu) són les formes que faràs servir més sovint: ' +
+        '"Sóc la Laia", "Ets nou aquí?". ' +
+        '"Molt de gust" és la manera fixa de dir "encantado/a" quan coneixes algú.',
+    },
     title: "Primera conversa a la feina",
     lines: [
       { id: "l1", speaker: "laia", text: "Bon dia! Sóc la Laia. I tu, com et dius?" },

@@ -18,6 +18,7 @@ import { StepCulturalCuriosity } from "@/components/lesson-player/StepCulturalCu
 import { StepMatch } from "@/components/lesson-player/StepMatch";
 import { StepWrite } from "@/components/lesson-player/StepWrite";
 import { StepCommonError } from "@/components/lesson-player/StepCommonError";
+import { StepTip } from "@/components/lesson-player/StepTip";
 import { StepSummary } from "@/components/lesson-player/StepSummary";
 import { useUserProgress } from "@/lib/context/UserProgressContext";
 
@@ -113,6 +114,9 @@ export function LessonPlayer({ lesson, content }: LessonPlayerProps) {
             )}
             {currentStep.kind === "common-error" && (
               <StepCommonError step={currentStep} onContinue={() => goToNextStep()} />
+            )}
+            {currentStep.kind === "tip" && (
+              <StepTip step={currentStep} onContinue={() => goToNextStep()} />
             )}
           </React.Fragment>
         )}
