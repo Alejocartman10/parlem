@@ -37,6 +37,8 @@ const template: LessonTemplateData = {
       { id: "v13", icon: "🔵", catalan: "vint", spanish: "veinte" },
       { id: "v14", icon: "🟡", catalan: "cinquanta", spanish: "cincuenta" },
       { id: "v15", icon: "💯", catalan: "cent", spanish: "cien" },
+      { id: "v16", icon: "🔷", catalan: "trenta", spanish: "treinta" },
+      { id: "v17", icon: "🎂", catalan: "any / anys", spanish: "año / años" },
     ],
   },
 
@@ -87,6 +89,14 @@ const template: LessonTemplateData = {
         { id: "m5", left: "100", right: "cent" },
       ],
       xp: 5,
+    },
+    {
+      type: "tip",
+      icon: "🔢",
+      title: "Del 30 en amunt, sense «i»",
+      content:
+        "Amb els vint (21-29) fas servir «i»: vint-i-tres. " +
+        "Però a partir de 30 el guionet va sol, sense «i»: trenta-dos, quaranta-cinc, seixanta-set.",
     },
     {
       type: "word-order",
