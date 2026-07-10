@@ -74,6 +74,16 @@ const template: LessonTemplateData = {
 
   exercises: [
     {
+      type: "tip",
+      icon: "❓",
+      title: "Les preguntes amb «Com», «On», «Quant»...",
+      content:
+        "Ja has vist «Com es diu?» i «Com et dius?». Aquestes paraules (Com, On, Quant, Quina) " +
+        "funcionen igual sempre: van al principi i després un verb. " +
+        "«On és...?» pregunta un lloc; «Com puc arribar a...?» pregunta un camí. " +
+        "Amb aquest patró pots crear moltes preguntes noves.",
+    },
+    {
       type: "multiple-choice",
       question: "Com es diu \"a la izquierda\" en català?",
       options: [
