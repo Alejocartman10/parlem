@@ -37,6 +37,7 @@ const template: LessonTemplateData = {
       { id: "v12", icon: "💻", catalan: "el programador / la programadora", spanish: "el programador / la programadora" },
       { id: "v13", icon: "🔧", catalan: "Em dedico a...", spanish: "Me dedico a..." },
       { id: "v14", icon: "✅", catalan: "Sóc [professió]", spanish: "Soy [profesión]" },
+      { id: "v15", icon: "💻", catalan: "treballar (en/a)", spanish: "trabajar (en/a)" },
     ],
   },
 
