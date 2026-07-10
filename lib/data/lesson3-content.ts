@@ -121,6 +121,14 @@ const template: LessonTemplateData = {
   },
 
   conversation: {
+    tip: {
+      icon: "🔤",
+      title: 'El verb "tenir": tinc, tens, té',
+      content:
+        'Ja coneixes "tinc" (jo): "Tinc un germà". ' +
+        'Per preguntar o parlar d\'una altra persona necessites "tens" (tu) i "té" (ell/ella): ' +
+        '"Tens família a Barcelona?", "El meu pare té seixanta anys".',
+    },
     title: "Parlem de la família",
     lines: [
       { id: "l1", speaker: "laia", text: "Tens família a Barcelona?" },
@@ -143,6 +151,7 @@ const template: LessonTemplateData = {
     '"L\'àvia" i "l\'avi" porten article amb apòstrof perquè comencen per vocal.',
     '"La parella" és la paraula neutra per a "pareja" en tots els contextos.',
     'Per dir la professió d\'un familiar: "El meu pare és metge", sense article.',
+    'Aquesta concordança de gènere és la mateixa regla que "dos/dues": el català sempre concorda amb el nom, no amb qui parla.',
   ],
 
   culturalCuriosity: {

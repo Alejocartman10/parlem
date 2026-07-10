@@ -1,0 +1,333 @@
+
+============================================================
+1. l01-salutacions — Salutacions i presentacions
+============================================================
+  ⚠️  [multiple-choice] step-6 (question)
+      texto: "Són les 9 del matí. Com saludes el teu company de feina?"
+      palabras no enseñadas: matí, saludes, company, feina
+  ⚠️  [conversation] step-13 (line:l3)
+      texto: "Molt de gust, Marc. Ets nou a l'empresa?"
+      palabras no enseñadas: empresa
+  ⚠️  [conversation] step-13 (question)
+      texto: "Com respons quan et presenten?"
+      palabras no enseñadas: respons, presenten
+
+============================================================
+2. l02-numeros — Els números de l'1 al 100
+============================================================
+  ⚠️  [multiple-choice] step-6 (question)
+      texto: "Com es diu el número 7 en català?"
+      palabras no enseñadas: diu, número, català
+  ⚠️  [fill-blank] step-7 (prompt)
+      texto: "Tinc filles i dos fills."
+      palabras no enseñadas: filles, fills
+  ⚠️  [fill-blank] step-7 (wordBank)
+      texto: "dos dues dous dos"
+      palabras no enseñadas: dous
+  ⚠️  [match] step-8 (pair:m3)
+      texto: "10"
+      palabras no enseñadas: 10
+  ⚠️  [match] step-8 (pair:m4)
+      texto: "20"
+      palabras no enseñadas: 20
+  ⚠️  [match] step-8 (pair:m5)
+      texto: "100"
+      palabras no enseñadas: 100
+  ⚠️  [word-order] step-10 (correctOrder)
+      texto: "Tinc trenta-dos anys."
+      palabras no enseñadas: trenta-dos
+  ⚠️  [multiple-choice] step-12 (question)
+      texto: "Com diries "quince" en català?"
+      palabras no enseñadas: diries, quince, català
+  ⚠️  [multiple-choice] step-12 (option:a)
+      texto: "quince"
+      palabras no enseñadas: quince
+  ⚠️  [multiple-choice] step-12 (option:d)
+      texto: "catorze"
+      palabras no enseñadas: catorze
+  ⚠️  [conversation] step-14 (line:l1)
+      texto: "Bon dia! Quants quilos de tomàquets vols?"
+      palabras no enseñadas: quants, quilos, tomàquets, vols
+  ⚠️  [conversation] step-14 (line:l3)
+      texto: "Tres quilos? Perfecte. Són dos euros cinquanta."
+      palabras no enseñadas: quilos, perfecte, euros
+  ⚠️  [conversation] step-14 (question)
+      texto: "Com diries que vols tres quilos?"
+      palabras no enseñadas: diries, vols, quilos
+  ⚠️  [conversation] step-14 (option:a)
+      texto: "Tres quilos, per favor."
+      palabras no enseñadas: quilos
+  ⚠️  [conversation] step-14 (option:b)
+      texto: "Vint quilos, gràcies."
+      palabras no enseñadas: quilos
+  ⚠️  [conversation] step-14 (option:c)
+      texto: "Zero quilos, adéu."
+      palabras no enseñadas: quilos
+  ⚠️  [conversation] step-14 (option:d)
+      texto: "Cent quilos, si us plau."
+      palabras no enseñadas: quilos, us, plau
+
+============================================================
+3. l03-familia — La família
+============================================================
+  ⚠️  [multiple-choice] step-6 (question)
+      texto: "Com es diu "la abuela" en català?"
+      palabras no enseñadas: diu, abuela, català
+  ⚠️  [fill-blank] step-8 (prompt)
+      texto: "El pare es diu Jordi."
+      palabras no enseñadas: diu, jordi
+  ⚠️  [conversation] step-12 (line:l1)
+      texto: "Tens família a Barcelona?"
+      palabras no enseñadas: tens, família, barcelona
+  ⚠️  [conversation] step-12 (line:l3)
+      texto: "Ah, i els teus pares estan a Espanya?"
+      palabras no enseñadas: ah, teus, pares, estan, espanya
+  ⚠️  [conversation] step-12 (question)
+      texto: "Com explicaries que tens un germà a Barcelona?"
+      palabras no enseñadas: explicaries, tens, barcelona
+  ⚠️  [conversation] step-12 (option:a)
+      texto: "Sí, el meu germà viu a Barcelona."
+      palabras no enseñadas: viu, barcelona
+  ⚠️  [conversation] step-12 (option:b)
+      texto: "No, la meva germà és a Madrid."
+      palabras no enseñadas: madrid
+  ⚠️  [conversation] step-12 (option:c)
+      texto: "Tinc el meva família a casa."
+      palabras no enseñadas: família, casa
+  ⚠️  [conversation] step-12 (option:d)
+      texto: "Els meva pares estan bé."
+      palabras no enseñadas: pares, estan
+
+============================================================
+4. l04-feina — Parlant de la feina
+============================================================
+  ⚠️  [multiple-choice] step-6 (question)
+      texto: "Com es diu "el trabajo" en català?"
+      palabras no enseñadas: diu, català
+  ⚠️  [fill-blank] step-8 (wordBank)
+      texto: "dedico dico faig treballo"
+      palabras no enseñadas: dico, faig, treballo
+  ⚠️  [word-order] step-9 (correctOrder)
+      texto: "Treballo en una empresa de tecnologia."
+      palabras no enseñadas: treballo, tecnologia
+  ⚠️  [write] step-10 (acceptedAnswers)
+      texto: "sóc metge soc metge sóc metge. soc metge."
+      palabras no enseñadas: soc, soc
+  ⚠️  [conversation] step-12 (line:l1)
+      texto: "Hola! Ets nou aquí, oi? A què et dediques?"
+      palabras no enseñadas: oi, dediques
+  ⚠️  [conversation] step-12 (line:l3)
+      texto: "Ah, perfecte! Nosaltres tenim molts enginyers al departament."
+      palabras no enseñadas: ah, perfecte, tenim, molts, enginyers, departament
+  ⚠️  [conversation] step-12 (question)
+      texto: "Com t'presentaries com a enginyer/a de software?"
+      palabras no enseñadas: presentaries, enginyer/a, software
+  ⚠️  [conversation] step-12 (option:a)
+      texto: "Sóc enginyer de software. Treballo al departament tècnic."
+      palabras no enseñadas: software, treballo, departament, tècnic
+  ⚠️  [conversation] step-12 (option:b)
+      texto: "Sóc un enginyer. Faig feines."
+      palabras no enseñadas: faig, feines
+  ⚠️  [conversation] step-12 (option:d)
+      texto: "Treballo la enginyeria de software."
+      palabras no enseñadas: treballo, software
+
+============================================================
+5. l05-ciutat — Moure's per la ciutat
+============================================================
+  ⚠️  [multiple-choice] step-6 (question)
+      texto: "Com es diu "a la izquierda" en català?"
+      palabras no enseñadas: diu, izquierda, català
+  ⚠️  [fill-blank] step-8 (prompt)
+      texto: "Gira a la i trobaràs l'estació."
+      palabras no enseñadas: trobaràs
+  ⚠️  [write] step-10 (acceptedAnswers)
+      texto: "com puc arribar a la plaça? com puc arribar a la plaça com puc arribar a la placa?"
+      palabras no enseñadas: placa
+  ⚠️  [conversation] step-12 (line:l1)
+      texto: "Perdoni! Estic una mica perduda. Sap on és l'estació de Sants?"
+      palabras no enseñadas: perdoni, estic, mica, perduda, sap, sants
+  ⚠️  [conversation] step-12 (line:l3)
+      texto: "Perfecte, moltes gràcies! Llavors he d'agafar el metro fins allà."
+      palabras no enseñadas: perfecte, moltes, llavors, he, allà
+  ⚠️  [conversation] step-12 (question)
+      texto: "Com li explicaries el camí fins a l'estació?"
+      palabras no enseñadas: li, explicaries, camí
+  ⚠️  [conversation] step-12 (option:b)
+      texto: "Cogeix a la dreta i després recte."
+      palabras no enseñadas: cogeix, després
+  ⚠️  [conversation] step-12 (option:c)
+      texto: "L'estació és lluny, camina esquerra."
+      palabras no enseñadas: camina
+
+============================================================
+6. l06-tramits — Tràmits administratius
+============================================================
+  ⚠️  [multiple-choice] step-6 (question)
+      texto: "Com es diu "rellenar un formulario" en català?"
+      palabras no enseñadas: diu, formulario, català
+  ⚠️  [multiple-choice] step-6 (option:c)
+      texto: "signar un formulari"
+      palabras no enseñadas: signar
+  ⚠️  [fill-blank] step-8 (wordBank)
+      texto: "demanar donar presentar signar"
+      palabras no enseñadas: donar, signar
+  ⚠️  [word-order] step-9 (correctOrder)
+      texto: "Quina documentació necessito portar?"
+      palabras no enseñadas: portar
+  ⚠️  [conversation] step-12 (line:l1)
+      texto: "Bon dia! En què el puc ajudar?"
+      palabras no enseñadas: ajudar
+  ⚠️  [conversation] step-12 (line:l3)
+      texto: "Perfecte, per a l'empadronament necessita el DNI o NIE i un contracte de lloguer."
+      palabras no enseñadas: perfecte, necessita, contracte, lloguer
+  ⚠️  [conversation] step-12 (question)
+      texto: "Com explicaries que vols empadronar-te?"
+      palabras no enseñadas: explicaries, vols, empadronar-te
+  ⚠️  [conversation] step-12 (option:a)
+      texto: "Voldria fer l'empadronament, si us plau."
+      palabras no enseñadas: fer, us, plau
+  ⚠️  [conversation] step-12 (option:b)
+      texto: "Vull el plaç de l'empadronament."
+      palabras no enseñadas: plaç
+  ⚠️  [conversation] step-12 (option:c)
+      texto: "Necessito signar el NIE."
+      palabras no enseñadas: signar
+
+============================================================
+7. l07-entrevista — L'entrevista de feina
+============================================================
+  ⚠️  [multiple-choice] step-6 (question)
+      texto: "Com es diu "puntos fuertes" en català?"
+      palabras no enseñadas: diu, puntos, fuertes, català
+  ⚠️  [fill-blank] step-8 (prompt)
+      texto: "Em una persona motivada."
+      palabras no enseñadas: motivada
+  ⚠️  [fill-blank] step-8 (wordBank)
+      texto: "considero considera consider considerar"
+      palabras no enseñadas: considera, consider, considerar
+  ⚠️  [conversation] step-12 (line:l1)
+      texto: "Explica'ns una mica la teva experiència laboral."
+      palabras no enseñadas: explica, ns, mica
+  ⚠️  [conversation] step-12 (line:l3)
+      texto: "Molt interessant! I per què vols treballar amb nosaltres?"
+      palabras no enseñadas: interessant, vols
+  ⚠️  [conversation] step-12 (question)
+      texto: "Com respondries per què vols treballar a l'empresa?"
+      palabras no enseñadas: respondries, vols
+  ⚠️  [conversation] step-12 (option:a)
+      texto: "M'agradaria créixer professionalment en un equip com el vostre."
+      palabras no enseñadas: créixer, professionalment, vostre
+  ⚠️  [conversation] step-12 (option:c)
+      texto: "Necessito la feina per pagar les despeses."
+      palabras no enseñadas: despeses
+  ⚠️  [conversation] step-12 (option:d)
+      texto: "No sé, m'és igual on treballar."
+      palabras no enseñadas: sé, igual
+
+============================================================
+8. l08-restaurant — Al restaurant
+============================================================
+  ⚠️  [multiple-choice] step-6 (question)
+      texto: "Com es diu "la cuenta" en català?"
+      palabras no enseñadas: diu, cuenta, català
+  ⚠️  [conversation] step-12 (line:l1)
+      texto: "Bona tarda! Ja sap què vol demanar?"
+      palabras no enseñadas: sap
+  ⚠️  [conversation] step-12 (line:l3)
+      texto: "Perfecte, de seguida els hi porto. Que aprofiti!"
+      palabras no enseñadas: perfecte, seguida, porto
+  ⚠️  [conversation] step-12 (question)
+      texto: "Com faries la comanda del menú del dia?"
+      palabras no enseñadas: faries, comanda
+  ⚠️  [conversation] step-12 (option:a)
+      texto: "De primer, amanida, i de segon, pollastre, si us plau."
+      palabras no enseñadas: amanida, pollastre
+  ⚠️  [conversation] step-12 (option:b)
+      texto: "Vull la cuenta del primer plat."
+      palabras no enseñadas: cuenta
+  ⚠️  [conversation] step-12 (option:d)
+      texto: "Demano el compte per menjar."
+      palabras no enseñadas: demano, menjar
+
+============================================================
+9. l09-habitatge — Buscar habitatge
+============================================================
+  ⚠️  [multiple-choice] step-6 (question)
+      texto: "Com es diu "la fianza" en català?"
+      palabras no enseñadas: diu, fianza, català
+  ⚠️  [multiple-choice] step-6 (option:d)
+      texto: "el subministrament"
+      palabras no enseñadas: subministrament
+  ⚠️  [fill-blank] step-8 (wordBank)
+      texto: "costa val puja és"
+      palabras no enseñadas: val, puja
+  ⚠️  [write] step-10 (acceptedAnswers)
+      texto: "m'agradaria visitar el pis. m'agradaria visitar el pis magradaria visitar el pis"
+      palabras no enseñadas: magradaria
+  ⚠️  [conversation] step-12 (line:l1)
+      texto: "Digui? Sí, encara està disponible el pis."
+      palabras no enseñadas: digui, encara, està
+  ⚠️  [conversation] step-12 (line:l3)
+      texto: "El lloguer és de 900 euros al mes, més una fiança d'un mes."
+      palabras no enseñadas: 900, euros, mes, mes
+  ⚠️  [conversation] step-12 (question)
+      texto: "Com preguntaries si es permeten animals al pis?"
+      palabras no enseñadas: preguntaries
+  ⚠️  [conversation] step-12 (option:b)
+      texto: "L'apartament té fiança d'animals?"
+      palabras no enseñadas: apartament
+  ⚠️  [conversation] step-12 (option:c)
+      texto: "Quant costa un gos al lloguer?"
+      palabras no enseñadas: gos
+
+============================================================
+10. l10-cultura — Cultura i festes catalanes
+============================================================
+  ⚠️  [multiple-choice] step-6 (question)
+      texto: "Què es regala tradicionalment per Sant Jordi?"
+      palabras no enseñadas: regala, tradicionalment
+  ⚠️  [multiple-choice] step-6 (option:a)
+      texto: "castanyes i panellets"
+      palabras no enseñadas: castanyes, panellets
+  ⚠️  [multiple-choice] step-6 (option:b)
+      texto: "roses i llibres"
+      palabras no enseñadas: roses, llibres
+  ⚠️  [multiple-choice] step-6 (option:c)
+      texto: "regals dels Reis Mags"
+      palabras no enseñadas: regals
+  ⚠️  [multiple-choice] step-6 (option:d)
+      texto: "un tió de fusta"
+      palabras no enseñadas: fusta
+  ⚠️  [fill-blank] step-8 (prompt)
+      texto: "Per Sant Jordi es regalen roses i ."
+      palabras no enseñadas: regalen, roses
+  ⚠️  [fill-blank] step-8 (correctAnswer)
+      texto: "llibres"
+      palabras no enseñadas: llibres
+  ⚠️  [fill-blank] step-8 (wordBank)
+      texto: "llibres castanyes panellets regals"
+      palabras no enseñadas: llibres, castanyes, panellets, regals
+  ⚠️  [conversation] step-12 (line:l1)
+      texto: "Aquest cap de setmana és la festa major del meu barri!"
+      palabras no enseñadas: setmana
+  ⚠️  [conversation] step-12 (line:l3)
+      texto: "Sí! Hi haurà castellers, correfoc i una revetlla amb música fins tard."
+      palabras no enseñadas: haurà, música, tard
+  ⚠️  [conversation] step-12 (question)
+      texto: "Com preguntaries per què és especial la festa major?"
+      palabras no enseñadas: preguntaries, especial
+  ⚠️  [conversation] step-12 (option:a)
+      texto: "Què es fa normalment a la festa major?"
+      palabras no enseñadas: fa, normalment
+  ⚠️  [conversation] step-12 (option:b)
+      texto: "Com és la fiesta gran del barri?"
+      palabras no enseñadas: fiesta, gran
+
+============================================================
+Total de alertas: 95
+============================================================
+
+Recuerda: esto es heurístico. Antes de agregar vocabulario o un StepTip,
+revisa cada alerta a mano — puede ser una conjugación de una palabra ya
+enseñada, un plural, o algo que el script no reconoce como comillado.
