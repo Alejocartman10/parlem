@@ -53,6 +53,7 @@ const template: LessonTemplateData = {
       { id: "v28", icon: "📞", catalan: "la selecció de personal", spanish: "la selección de personal" },
       { id: "v29", icon: "🧠", catalan: "l'aprenentatge continu", spanish: "el aprendizaje continuo" },
       { id: "v30", icon: "🙏", catalan: "agrair (l'oportunitat)", spanish: "agradecer (la oportunidad)" },
+      { id: "v31", icon: "📈", catalan: "créixer (professionalment)", spanish: "crecer (profesionalmente)" },
     ],
   },
 
@@ -63,6 +64,7 @@ const template: LessonTemplateData = {
       'Per parlar de punts forts: "Em considero una persona [adjectiu]", "El meu punt fort és...".',
       'Per descriure experiència: "He treballat com a...", "Vaig treballar durant [temps] a...".',
       'Fer preguntes finals mostra interès: "Quins són els propers passos?", "Com és l\'equip de treball?".',
+      '"Vostre/vostra" es forma igual que "el meu/la meva" (Lliçó 3): concorda amb el nom, no amb qui parla. "El vostre equip", "la vostra empresa".',
     ],
   },
 
