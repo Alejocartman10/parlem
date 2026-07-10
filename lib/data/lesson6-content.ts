@@ -54,6 +54,7 @@ const template: LessonTemplateData = {
       { id: "v29", icon: "🔢", catalan: "el número de sol·licitud", spanish: "el número de solicitud" },
       { id: "v30", icon: "🖋️", catalan: "emplenar (un formulari)", spanish: "rellenar (un formulario)" },
       { id: "v31", icon: "📦", catalan: "portar", spanish: "traer / llevar" },
+      { id: "v32", icon: "🙌", catalan: "fer", spanish: "hacer" },
     ],
   },
 
