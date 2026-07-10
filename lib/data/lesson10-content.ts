@@ -53,6 +53,8 @@ const template: LessonTemplateData = {
       { id: "v28", icon: "🥳", catalan: "la colla", spanish: "la peña / el grupo" },
       { id: "v29", icon: "🎺", catalan: "la cercavila", spanish: "el pasacalles" },
       { id: "v30", icon: "🧑‍🤝‍🧑", catalan: "el poble", spanish: "el pueblo" },
+      { id: "v31", icon: "🙌", catalan: "fer", spanish: "hacer" },
+      { id: "v32", icon: "📊", catalan: "normalment", spanish: "normalmente" },
     ],
   },
 
