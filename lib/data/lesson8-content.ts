@@ -53,6 +53,8 @@ const template: LessonTemplateData = {
       { id: "v28", icon: "🧾", catalan: "la propina", spanish: "la propina" },
       { id: "v29", icon: "🥘", catalan: "el plat del dia", spanish: "el plato del día" },
       { id: "v30", icon: "🙏", catalan: "que aprofiti!", spanish: "¡que aproveche!" },
+      { id: "v31", icon: "🥗", catalan: "l'amanida", spanish: "la ensalada" },
+      { id: "v32", icon: "🍗", catalan: "el pollastre", spanish: "el pollo" },
     ],
   },
 
@@ -163,6 +165,7 @@ const template: LessonTemplateData = {
     '"De primer... i de segon..." per estructurar una comanda de menú del dia.',
     '"Que aprofiti!" s\'usa abans de començar a menjar.',
     '"Voldria..." és una forma cortesa i habitual per fer qualsevol comanda.',
+    '"Si us plau" i "Per favor" (Lliçó 1) signifiquen el mateix; "si us plau" és una mica més formal i habitual en un restaurant.',
   ],
 
   culturalCuriosity: {
